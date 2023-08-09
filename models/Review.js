@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class Review extends Model {}
 
-
 Review.init(
     {
         id: {
@@ -13,18 +12,26 @@ Review.init(
             autoIncrement: true,
         },
         userId: {
-            // foreign key to the user model id
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user', // Replace with actual User model name
+                key: 'id',
+            },
         },
         locationId: {
-            // foreign key to location model id
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'location', // Replace with actual Location model name
+                key: 'id',
+            },
         },
         rating: {
             type: DataTypes.INTEGER,
             allowNull: true,
             validate: {
                 min: 0,
-                max: 10
-            }
+                max: 10,
+            },
         },
         comment: {
             type: DataTypes.STRING,
@@ -41,4 +48,3 @@ Review.init(
 );
 
 module.exports = Review;
-

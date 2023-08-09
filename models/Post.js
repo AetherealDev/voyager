@@ -12,10 +12,18 @@ Post.init(
             autoIncrement: true,
         },
         userId: {
-            // foreign key to user
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user', // This should be the actual name of your User model
+                key: 'id',
+            },
         },
         locationId: {
-          // foreign key to location
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'location', // This should be the actual name of your Location model
+                key: 'id',
+            },
         },
         title: {
             type: DataTypes.STRING,
