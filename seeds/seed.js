@@ -2,6 +2,9 @@ const sequelize = require('../config/connection');
 const { User, Location, Review, Post } = require('../models');
 
 const userData = require('./userData.json');
+const locationData = require('./locationData.json');
+const reviewData = require('./reviewData.json');
+const postData = require('./postData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -11,17 +14,17 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Location.bulkCreate(userData, {
+  await Location.bulkCreate(locationData, {
     individualHooks: true,
     returning: true,
   });
 
-  await Review.bulkCreate(userData, {
+  await Review.bulkCreate(reviewData, {
     individualHooks: true,
     returning: true,
   });
 
-  await Post.bulkCreate(userData, {
+  await Post.bulkCreate(postData, {
     individualHooks: true,
     returning: true,
   });
