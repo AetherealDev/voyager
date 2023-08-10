@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyager</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+        <div class="container-fluid bg-gradient-to-r from-cyan-500 to-blue-500" id="header">
+          <h1 class="text-center text-5xl p-4" >Voyager</h1>
+        </div>
+    <!-- Only display the logout button if the user is logged in -->
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+
+  <!-- Only include the logout script if the user is logged in -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
