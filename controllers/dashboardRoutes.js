@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Post, User, Review } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.userID, {
       include: [
