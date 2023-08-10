@@ -10,10 +10,23 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-        <div class="container-fluid" id="header">
-          <h1 class="text-center text-5xl p-4" >Voyager</h1>
-        </div>
+  <header class="p-1 bg-primary-subtle border border-primary rounded-3">
+    <div class="" id="header">
+      <div class="align-center justify-center">
+        <nav>
+          <a class="text-dark" href="/feed">Following</a>
+          <a class="text-dark" href="/hot">🔥Hot</a>
+          <a class="text-dark" href="/dashboard">Dashboard</a>
+          <a class="text-dark" href="/post">Post</a>
+        </nav>
+      </div>
+      <div>
+        <h1 class="text-center">Voyager</h1>
+      </div>
+      <div class="input-group">
+        <input type="text" class="" placeholder="🔎">
+      </div>
+    </div>
     <!-- Only display the logout button if the user is logged in -->
     {{!-- {{#if logged_in}}
     <nav>
@@ -33,7 +46,7 @@
   <script src="/js/logout.js"></script>
   {{/if}} --}}
 
-
+  <script src="/js/index.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 
