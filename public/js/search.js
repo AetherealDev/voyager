@@ -8,16 +8,26 @@ const searchFormHandler = async (event) => {
     console.log(query);
   
     if (query) {
-      const response = await fetch('/api/users/', {
-        method: 'POST',
+      let response = await fetch('/api/location/', {
+        method: 'GET',
         body: JSON.stringify({ query }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace('/response.user.id');
+        document.location.replace('/response.location.id');
       } else {
-        alert('Failed to find user');
+        let response = await fetch('/api/users/', {
+            method: 'GET',
+            body: JSON.stringify({ query }),
+            headers: { 'Content-Type': 'application/json' },
+          });
+
+          if (response.ok) {
+            document.location.replace('/response.location.id');
+          } else {
+            alert('Failed to location or user');
+          }
       }
     }
   };
