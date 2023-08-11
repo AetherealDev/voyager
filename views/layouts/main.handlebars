@@ -10,9 +10,9 @@
 </head>
 
 <body>
-  <header class="p-1 bg-primary-subtle border border-primary rounded-3">
-    <div class="" id="header">
-      <div class="align-center justify-center">
+  <header class="container-fluid text-center p-1 bg-primary-subtle border border-primary rounded-3">
+    <div class="row align-items-center" id="header">
+      <div class="col">
         <nav>
           <a class="text-dark" href="/feed">Following</a>
           <a class="text-dark" href="/hot">🔥Hot</a>
@@ -20,11 +20,13 @@
           <a class="text-dark" href="/post">Post</a>
         </nav>
       </div>
-      <div>
+      <div class="col-6">
         <h1 class="text-center">Voyager</h1>
       </div>
-      <div class="input-group">
-        <input type="text" class="" placeholder="🔎">
+      <div class="col justify-center">
+        <div class="input-group">
+          <input type="text" class="" placeholder="🔎">
+        </div>
       </div>
     </div>
     <!-- Only display the logout button if the user is logged in -->
@@ -34,7 +36,7 @@
     </nav>
     {{/if}} --}}
   </header>
-  <main class="container container-fluid mt-5">
+  <main class="container mt-5">
     {{{ body }}}
   </main>
   <footer>
