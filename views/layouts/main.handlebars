@@ -34,6 +34,11 @@
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
+    {{/if}}
+    {{#if !logged_in}}
+    <nav>
+      <button class="btn" id="login">login</button>
+    </nav>
     {{/if}} --}}
   </header>
   <main class="container mt-5">
