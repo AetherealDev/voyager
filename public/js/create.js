@@ -3,19 +3,21 @@ let step = 1;
 const nextFormHandler = () => {
   if(step === 1) {
     displayStep(2);
+    step++;  
   } else if (step === 2) {
     displayStep(3);
+    step++;  
   }
-  step++;  
 };
 
 const backFormHandler = () => {
   if(step === 2) {
     displayStep(1);
+    step--;  
   } else if (step === 3) {
     displayStep(2);
+    step--;  
   }
-  step--;  
 }
 
 const displayStep = (nextStep) => {
@@ -41,6 +43,13 @@ const displayStep = (nextStep) => {
 document.querySelector('#next-btn').addEventListener('click', nextFormHandler);
 document.querySelector('#back-btn').addEventListener('click', backFormHandler);
 
+window.addEventListener('keydown', function(event) {
+  if(event.key === 'Enter') {
+    event.preventDefault();
+    return false;
+  }
+});
+
 document.querySelector('#post-form').addEventListener('submit', async function(event) {
   event.preventDefault();
 
@@ -56,7 +65,6 @@ document.querySelector('#post-form').addEventListener('submit', async function(e
   } else {
     alert('Failed to create post.');
   }
-
 });
 
 document.querySelector('#image').addEventListener('change', function (event) {
