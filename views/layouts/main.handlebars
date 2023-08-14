@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voyager</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-</head>
 
-<body>
-<header class="container-fluid text-center p-1 bg-primary border border-primary rounded-3">
+</head>
+<body style="background-size: cover;">
+<header class="container-fluid text-center p-1 rounded-3">
     <div class="row align-items-center" id="header">
         <div class="col">
-            <nav class="nav justify-content-start">
+            <nav class="nav justify-content-start bg-custom-purple border-purple border rounded-3">
                 <a class="nav-link text-light" href="/">Home</a>
-                <a class="nav-link text-light" href="/feed">Following</a>
+                <a class="nav-link text-light" href="/feed">Feed</a>
                 <a class="nav-link text-light" href="/hot">🔥Hot</a>
                 <a class="nav-link text-light" href="/post">Post</a>
             </nav>
         </div>
         <div class="col-6">
-            <h1 class="text-center">Voyager</h1>
+            <h1 class="text-center text-primary h1">Voyager</h1>
         </div>
         <div class="col justify-content-end">
             <div class="container d-flex align-items-center">
@@ -41,12 +40,7 @@
 <main class="container mt-5">
     {{{ body }}}
 </main>
-<footer>
-
-</footer>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
