@@ -1,7 +1,20 @@
-[{
+[
+  {
     "id": 1,
     "title": "Ohio Stadium",
     "content": "Football!!!1!",
-    "upvote": 0
+    "upvote": 1
+  },
+  {
+    "id": 2,
+    "title": "Ohio Stadium again",
+    "content": "Football@@@@2@",
+    "upvote": 2
+  },
+  {
+    "id": 3,
+    "title": "Columbus",
+    "content": "Buckeyes!",
+    "upvote": 4
   }
 ]

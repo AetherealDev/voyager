@@ -1,0 +1,49 @@
+{{#each posts as |post| }}
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <h2>{{post.id}}</h2>
+  </div>
+  <div class="col-md-6">
+    <h2>{{post.title}}</h2>
+    <a href={{post.image}}></a>
+  </div>
+</div>
+{{/each}}
+
+
+ {{!-- id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user', // This should be the actual name of your User model
+                key: 'id',
+            },
+        },
+        locationId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'location', // This should be the actual name of your Location model
+                key: 'id',
+            },
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        content: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        upvote: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        } --}}

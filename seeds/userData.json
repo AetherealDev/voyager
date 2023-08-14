@@ -1,7 +1,17 @@
 [
     {
-      "username": "admin",
-      "email": "admin@hotmail.com",
+      "username": "Avery",
+      "email": "avery@hotmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Ethan",
+      "email": "ethan@hotmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Kyle",
+      "email": "kyle@hotmail.com",
       "password": "password12345"
     }
 ]
