@@ -24,16 +24,19 @@
             <h1 class="text-center">Voyager</h1>
         </div>
         <div class="col justify-center">
-            <div class="input-group">
-                <input type="text" class="" placeholder="🔎">
-                <div class="container">
-                    {{> loginModal }}
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Open Login Modal
-                    </button>
+            <div class="container" style="display: flex; align-items: center;">
+                <div class="input-group">
+                    <input type="text" class="" placeholder="🔎">
                 </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                   Login
+                </button>
+            </div>
+            <div class="container">
+                {{> loginModal }}
             </div>
         </div>
+
     </div>
 </header>
 <main class="container mt-5">
