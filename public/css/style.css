@@ -1,0 +1,62 @@
+.btn {
+  background-color: #229aca;
+  color: white;
+  border: none;
+}
+
+.btn-handler {
+  position: relative;
+}
+
+#next-btn,
+#submit-btn {
+  float: right;
+}
+
+.btn:hover {
+  background-color: #125e7c;
+  color: white;
+}
+
+#map {
+  display: block;
+  margin: 1rem auto;
+  height: 500px;
+}
+
+#title {
+  width: 100%;
+  text-align: center;
+  font-size: 200%;
+  background: none;
+  border: none;
+}
+
+#title:focus {
+  outline: none;
+}
+
+#image-preview {
+  /* background-image: url("placeholder.png"); */
+  background-size: cover;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  width: 750px;
+  height: 500px;
+}
+
+.textarea-group {
+  width: 100%;
+}
+
+#content {
+  width: 100%;
+  min-height: 500px;
+  resize: none;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
