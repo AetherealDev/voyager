@@ -1,0 +1,52 @@
+<form id="post-form">
+  <section class="step-container" id="step-1">
+    <header class="row">
+      <div class="col">
+        <h1>New Travel Log</h1>
+        <h2 class="step">Step 1. Choose Your Location</h2>
+      </div>
+    </header>
+    <div class="input-group mb-3 mt-3">
+      <input type="text" class="form-control" placeholder="Enter your trip location" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
+    <div>
+      <img src="" id="map">
+    </div>
+  </section>
+
+  <section class="step-container hidden" id="step-2">
+    <header class="row">
+      <div class="col">
+        <h1>New Travel Log</h1>
+        <h2 class="step">Step 2. Add Your Title and Cover Image</h2>
+      </div>
+    </header>
+      <div>
+        <input name="title" type="text" placeholder="Add Title" id="title">
+        <input name="image" type="file" accept="image/jpeg, image/png, image/jpg" id="image">
+        <img id="image-preview">
+      </div>
+  </section>
+
+  <section class="step-container hidden" id="step-3">
+    <header class="row">
+      <div class="col">
+        <h1>New Travel Log</h1>
+        <h2 class="step">Step 3. Write Your Blog</h2>
+      </div>
+    </header>
+      <div class="textarea-group">
+        <textarea name="content" id="content" placeholder="Write your blog here..."></textarea>
+      </div>
+  </section>
+
+  <div class="btn-handler">
+    <button type="button" class="btn" id="back-btn">Back</button>
+    <button type="button" class="btn" id="next-btn">Next</button>  
+    <button type="submit" class="btn hidden" id="submit-btn">Finish</button>  
+  </div>
+
+</form>
+
+<script src="/js/create.js"></script>
