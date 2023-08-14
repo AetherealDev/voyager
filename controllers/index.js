@@ -4,6 +4,7 @@ const followingRoutes = require('./followingRoutes');
 const hotRoutes = require('./hotRoutes');
 const dashboardRoutes = require('./dashboardRoutes');
 
+
 router.use('/', homeRoutes);
 router.use('/following', followingRoutes);
 router.use('/hot', hotRoutes);
