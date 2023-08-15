@@ -31,8 +31,6 @@ router.get('/:id', withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    console.log(post);
-
     res.render('dashboard', { post });
   } catch (err) {
     console.log(err);
