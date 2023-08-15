@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { Post, User } = require('../models');
 
 router.get('/', async (req, res) => {
+
     try {
         const postData = await Post.findAll(
             { 
@@ -14,7 +15,6 @@ router.get('/', async (req, res) => {
             });
         
         const posts = postData.map((post) => post.get( {plain: true})); 
-        console.log(posts, 'HELLLO');
         res.render('following', {posts});
     } catch (err) {
         console.error();
