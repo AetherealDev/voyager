@@ -42,6 +42,10 @@ router.post('/', upload.single('image'), async (req, res) => {
   //   });
 
   //   res.status(200).json(postData);
+  console.log('Location: ' + req.body.place_id,
+              'Title: ' + req.body.title, 
+              'Content: ' + req.body.content,
+              'Image: ' + req.file.path);
   res.sendStatus(200);
   } catch (err) {
     console.log(err);
