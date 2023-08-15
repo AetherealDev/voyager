@@ -1,0 +1,26 @@
+<!-- views/register.handlebars -->
+<div class="bg-custom-purple rounded-3 p-4"> <!-- Added 'p-4' for padding and changed background color to 'bg-primary' -->
+    <h2 class="text-light">Register</h2>
+    <label id="signupResult" class="rounded-3 bg-danger text-light p-1 hidden"> Failed to create account</label>
+    <form class="signup-form">
+        <div class="form-group text-light">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username-signup" placeholder="Enter username">
+        </div>
+        <div class="form-group text-light">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email-signup" placeholder="Enter email">
+        </div>
+        <div class="form-group text-light">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password-signup" placeholder="Enter password">
+        </div>
+        <div class="form-group text-light">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword-signup" placeholder="Confirm password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="registerButton" disabled>Register</button>
+    </form>
+</div>
+
+<script src="/js/signup.js"></script>
