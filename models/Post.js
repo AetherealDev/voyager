@@ -18,12 +18,9 @@ Post.init(
                 key: 'id',
             },
         },
-        locationId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'location', // This should be the actual name of your Location model
-                key: 'id',
-            },
+        placeId: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         title: {
             type: DataTypes.STRING,
@@ -39,7 +36,8 @@ Post.init(
         },
         upvote: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
+            defaultValue: 0,
         }
     },
     {
