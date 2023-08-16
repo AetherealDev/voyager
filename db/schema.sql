@@ -1,19 +1,3 @@
-CREATE TABLE users (
-  id INT NOT NULL AUTO_INCREMENT,
-  username VARCHAR(40) NOT NULL UNIQUE,
-  pass VARCHAR(40) NOT NULL,
-  email VARCHAR(40) NOT NULL UNIQUE,
-  PRIMARY KEY (id)
-);
+DROP DATABASE IF EXISTS voyager_db;
 
-CREATE TABLE posts (
-  id INT NOT NULL AUTO_INCREMENT,
-  title VARCHAR(30) NOT NULL UNIQUE,
-  content TEXT,
-  upvote INT,
-  link_image VARCHAR(99),
-  user_id INT,
-  FOREIGN KEY (user_id)
-  REFERENCES users(id),
-  PRIMARY KEY (id)
-);
+CREATE DATABASE voyager_db;
