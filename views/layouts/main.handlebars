@@ -26,7 +26,7 @@
         <div class="col justify-content-end">
             <div class="container d-flex align-items-center">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="🔎">
+                    <input name="location-query" type="text" class="form-control" id="location-query" placeholder="🔎 Search for a location">
                 </div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
                     Login
@@ -41,6 +41,7 @@
 <main class="container mt-5">
     {{{ body }}}
 </main>
+<script src="/js/locationQuery.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
