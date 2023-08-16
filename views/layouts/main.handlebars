@@ -33,7 +33,11 @@
                     <input name="location-query" type="text" class="form-control" id="location-query" placeholder="🔎 Search for a location">
                 </div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                {{#if loggedIn}}
+                    Logout
+                {{else}}
                     Login
+                {{/if}}
                 </button>
             </div>
             <div class="container">
