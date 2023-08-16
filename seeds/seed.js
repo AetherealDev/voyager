@@ -14,15 +14,15 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Location.bulkCreate(locationData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  await Review.bulkCreate(reviewData, {
-    individualHooks: true,
-    returning: true,
-  });
+  // await Location.bulkCreate(locationData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+  //
+  // await Review.bulkCreate(reviewData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
   await Post.bulkCreate(postData, {
     individualHooks: true,

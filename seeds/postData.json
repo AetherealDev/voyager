@@ -1,7 +1,10 @@
-[{
-    "id": 0,
+[
+  {
+    "user_id": 1,
+    "place_id": "your-place-id-1",
     "title": "Ohio Stadium",
     "content": "Football!!!1!",
+    "image": "image-url-1.jpg",
     "upvote": 0
   }
 ]
