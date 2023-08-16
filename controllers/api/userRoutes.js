@@ -32,32 +32,31 @@ router.post('/login', async (req, res) => {
       },
     });
 
-    if(!userData) {
+    if (!userData) {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
-    if(!validPassword) {
+    if (!validPassword) {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userID = userData.id; // Set the userID after saving the session
+
       console.log('File: user-routes.js ~ line 45 ~ req.session.save ~ req.session.cookie', req.session.cookie);
       res.status(200).json({ user: userData, message: 'You are now logged in!' });
     });
-
-    req.session.userID = userData.id;
-
-    res.status(200).json({ user: userData, message: 'You are now logged in!' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
 
 // Logout
 router.post('/logout', (req, res) => {

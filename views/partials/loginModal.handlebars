@@ -1,3 +1,4 @@
+<!-- loginModal.handlebars -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -5,7 +6,7 @@
                 <h5 class="modal-title" id="loginModalTitle">Login</h5>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="loginForm"> <!-- Added an ID for the form -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="inputEmail">Email address</label>
                         <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Enter a valid email address" />
@@ -15,7 +16,7 @@
                         <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Enter password" />
                     </div>
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                        <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register" class="link-danger">Register</a></p>
                     </div>
                 </form>
@@ -23,3 +24,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/login.js"></script>

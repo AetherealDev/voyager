@@ -7,12 +7,10 @@
       </div>
     </header>
     <div class="input-group mb-3 mt-3">
-      <input type="text" class="form-control" placeholder="Enter your trip location" aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      <input name="location" id="location-input" type="text" class="form-control SearchBox" placeholder="Enter your trip location" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <input name="place_id" class="hidden" id="place_id" type="text">
     </div>
-    <div>
-      <img src="" id="map">
-    </div>
+    <div id="map"></div>
   </section>
 
   <section class="step-container hidden" id="step-2">
@@ -50,3 +48,8 @@
 </form>
 
 <script src="/js/create.js"></script>
+<script src="/js/maps.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqjhYV8ffqPgXEqIxcVXpJZNu-acyOxEs&callback=initAutocomplete&libraries=places&v=weekly"
+  defer>
+</script>

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const multer = require('multer');
 const short = require('short-uuid');
+const withAuth = require('../../utils/auth');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -31,18 +32,17 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
-router.post('/', upload.single('image'), async (req, res) => {
+router.post('/', withAuth, upload.single('image'), async (req, res) => {
   try {
-  //   const postData = await Post.create({
-  //     userId: ,
-  //     locationId: ,
-  //     title: req.body.title,
-  //     content: req.body.content,
-  //     image: req.file.path
-  //   });
+    const postData = await Post.create({
+      userId: req.session.userID,
+      placeId: req.body.place_id,
+      title: req.body.title,
+      content: req.body.content,
+      image: req.file.path
+    });
 
-  //   res.status(200).json(postData);
-  res.sendStatus(200);
+    res.status(200).json(postData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

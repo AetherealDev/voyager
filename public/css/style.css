@@ -60,3 +60,27 @@
 .hidden {
   display: none;
 }
+
+.bg-custom-purple {
+  background-color: #5500ff; /* You can adjust the shade of purple */
+  /* Additional styling if needed */
+}
+/* Remove horizontal scrollbar */
+body {
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-image: url('/assets/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+}

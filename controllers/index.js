@@ -2,14 +2,12 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
-const followingRoutes = require('./followingRoutes');
-const hotRoutes = require('./hotRoutes');
+const feedRoutes = require('./feedRoutes');
 const dashboardRoutes = require('./dashboardRoutes');
 
 
 router.use('/', homeRoutes);
-router.use('/following', followingRoutes);
-router.use('/hot', hotRoutes);
+router.use('/following', feedRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/api', apiRoutes);
 
