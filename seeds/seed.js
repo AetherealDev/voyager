@@ -18,7 +18,7 @@ const seedDatabase = async () => {
   //   individualHooks: true,
   //   returning: true,
   // });
-
+  //
   // await Review.bulkCreate(reviewData, {
   //   individualHooks: true,
   //   returning: true,

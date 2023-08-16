@@ -1,23 +1,10 @@
 [
   {
+    "user_id": 1,
+    "place_id": "your-place-id-1",
     "title": "Ohio Stadium",
     "content": "Football!!!1!",
-    "upvote": 1,
-    "userId": 1,
-    "image": "https://en.wikipedia.org/wiki/Ohio_Stadium#/media/File:Ohio_Stadium_Overhead.jpg" 
-  },
-  {
-    "title": "Ohio Stadium again",
-    "content": "Football@@@@2@",
-    "upvote": 2,
-    "userId": 2,
-    "image": "https://en.wikipedia.org/wiki/Ohio_Stadium#/media/File:Ohio_Stadium_Overhead.jpg"
-  },
-  {
-    "title": "Columbus",
-    "content": "Buckeyes!",
-    "upvote": 4,
-    "userId": 3,
-    "image": "https://en.wikipedia.org/wiki/LeVeque_Tower#/media/File:LeVeque_Tower,_Columbus,_OH,_US_crop.jpg"
+    "image": "image-url-1.jpg",
+    "upvote": 0
   }
 ]

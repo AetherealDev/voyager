@@ -11,14 +11,15 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        userId: {
+        user_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user', // This should be the actual name of your User model
                 key: 'id',
             },
         },
-        placeId: {
+        place_id: {
             type: DataTypes.STRING,
             allowNull: false,
         },
