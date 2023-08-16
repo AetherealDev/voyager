@@ -51,4 +51,31 @@ router.get('/popular', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:place_id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        placeId: req.params.place_id
+      },
+      include: [
+        {
+          model: User,
+        },
+      ],
+      order: [
+        ['upvote', 'DESC'],
+      ],
+    });
+
+    const posts = postData.map((post) =>
+      post.get({ plain: true })
+    );
+
+    res.render('feed', { posts });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
