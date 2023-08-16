@@ -3,7 +3,7 @@ const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-  res.redirect('/recent');
+  res.redirect('/feed/recent');
 });
 
 router.get('/recent', withAuth, async (req, res) => {
@@ -20,7 +20,10 @@ router.get('/recent', withAuth, async (req, res) => {
       post.get({ plain: true })
     );
 
-    res.render('feed', { posts });
+    res.render('feed', { 
+      posts,
+      loggedIn: req.session.loggedIn   
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -44,7 +47,10 @@ router.get('/popular', withAuth, async (req, res) => {
       post.get({ plain: true })
     );
 
-    res.render('feed', { posts });
+    res.render('feed', { 
+      posts,
+      loggedIn: req.session.loggedIn   
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -55,7 +61,7 @@ router.get('/:place_id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: {
-        placeId: req.params.place_id
+        place_id: req.params.place_id
       },
       include: [
         {
@@ -71,7 +77,10 @@ router.get('/:place_id', withAuth, async (req, res) => {
       post.get({ plain: true })
     );
 
-    res.render('feed', { posts });
+    res.render('feed', { 
+      posts,
+      loggedIn: req.session.loggedIn   
+     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
