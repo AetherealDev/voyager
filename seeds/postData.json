@@ -6,5 +6,29 @@
     "content": "Football!!!1!",
     "image": "image-url-1.jpg",
     "upvote": 0
+  },
+  {
+    "user_id": 2,
+    "place_id": "your-place-id-1",
+    "title": "Ohio Stadium",
+    "content": "Football!!!1!",
+    "image": "image-url-1.jpg",
+    "upvote": 0
+  },
+  {
+    "user_id": 2,
+    "place_id": "your-fff-id-1",
+    "title": "Ohio fff",
+    "content": "Footbfffall!!!1!",
+    "image": "ffff-url-1.jpg",
+    "upvote": 0
+  },
+  {
+    "user_id": 1,
+    "place_id": "your-f-id-1",
+    "title": "Ohio fff",
+    "content": "ff!!!1!",
+    "image": "image-url-1.jpg",
+    "upvote": 0
   }
 ]
