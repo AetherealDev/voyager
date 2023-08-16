@@ -4,8 +4,8 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-router.get('/create', async (req, res) => {
-  res.render('create');
+router.get('/post', async (req, res) => {
+  res.render('post');
 });
 
 router.get('/login', (req, res) => {
