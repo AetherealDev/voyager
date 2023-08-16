@@ -7,7 +7,7 @@ const dashboardRoutes = require('./dashboardRoutes');
 
 
 router.use('/', homeRoutes);
-router.use('/following', feedRoutes);
+router.use('/feed', feedRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/api', apiRoutes);
 
