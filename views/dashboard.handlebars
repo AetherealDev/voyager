@@ -1,0 +1,20 @@
+
+<body>
+<div class="container mt-5">
+    <h1>Welcome, {{ user.username }}!</h1>
+    <h2>Your Posts:</h2>
+
+    <ul class="list-group mt-3">
+        {{#each user.posts}}
+            <li class="list-group-item">
+                <h4>{{ this.title }}</h4>
+                <p>{{ this.content }}</p>
+            </li>
+        {{/each}}
+    </ul>
+
+    <!-- Other dashboard content here -->
+
+</div>
+</body>
+
