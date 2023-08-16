@@ -88,30 +88,6 @@ router.get('/:place_id', withAuth, async (req, res) => {
 });
 
 
-
-//from old work
-// router.get('/', async (req, res) => {
-
-//     try {
-//         const postData = await Post.findAll(
-//             { 
-//                 include: [
-//                     {
-//                         model: User,
-//                         attributes: ['id', 'username'],
-//                     },
-//                 ] ,
-//             });
-        
-//         const posts = postData.map((post) => post.get( {plain: true})); 
-//         res.render('following', {posts});
-//     } catch (err) {
-//         console.error();
-//         res.status(500).json(err);
-//     }
-//   });
-
-
 module.exports = router;
 
 
