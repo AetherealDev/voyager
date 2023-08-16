@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/post', async (req, res) => {
-  res.render('post');
+  res.render('post', {loggedIn: req.session.loggedIn,});
 });
 
 router.get('/login', (req, res) => {
@@ -16,7 +16,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('register');
+  res.render('register', {loggedIn: req.session.loggedIn,});
 });
 
 router.get('/register', (req, res) => {
@@ -25,7 +25,7 @@ router.get('/register', (req, res) => {
     return;
   }
 
-  res.render('register');
+  res.render('register', {loggedIn: req.session.loggedIn,});
 });
 
 module.exports = router;
