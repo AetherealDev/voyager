@@ -14,6 +14,9 @@ router.get('/recent', withAuth, async (req, res) => {
           model: User,
         },
       ],
+      order: [
+        ['id', 'DESC'],
+      ]
     });
 
     const posts = postData.map((post) =>

@@ -1,3 +1,12 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/feed/recent">Recent</a></li>
+    <li><a class="dropdown-item" href="/feed/popular">Popular</a></li>
+  </ul>
+</div>
 {{#if singleQuery}}
 <ul class="list-group mt-3">
     <li class="list-group-item">
@@ -20,7 +29,7 @@
             <a href="/feed/{{this.id}}" id="post-link">
                 <img src="{{this.image}}" class="cover-image">
                 <div class="d-flex justify-content-between">
-                    <h4>{{ post.title }} by <a href="#" class="user-link" data-user-id="{{ post.user.id }}">{{ post.user.username }}</a></h4>
+                    <h4>{{ post.title }} by <a href="#" class="user-link" data-user-id="{{ post.user.id }}">@{{ post.user.username }}</a></h4>
                     <div>
                         <span id="upvote-post-{{post.id}}" class="badge bg-primary">Upvotes: {{ post.upvote }}</span>
                         <br/>
