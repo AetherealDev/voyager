@@ -29,7 +29,7 @@ const renderQuery = async (placeId) => {
   });
 
   if(response.ok) {
-    console.log(response);
+    document.location = `/feed/search/${placeId}`;
   } else {
     alert('Failed to fetch location.');
   }
