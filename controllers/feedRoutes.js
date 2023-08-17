@@ -61,6 +61,7 @@ router.get('/popular', withAuth, async (req, res) => {
 });
 
 router.get('/search/:place_id', withAuth, async (req, res) => {
+  console.log(req.params.place_id);
   try {
     const postData = await Post.findAll({
       where: {
@@ -80,7 +81,7 @@ router.get('/search/:place_id', withAuth, async (req, res) => {
       post.get({ plain: true })
     );
 
-    res.render('feed', { 
+    res.render('feed', {
       posts,
       loggedIn: req.session.loggedIn   
      });
