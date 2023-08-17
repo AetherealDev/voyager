@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS voyager_db;
+drop DATABASE if exists `voyager_db`;
 
-CREATE DATABASE voyager_db;
+create DATABASE `voyager_db`;
