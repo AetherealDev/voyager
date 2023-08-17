@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post} = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -22,6 +22,29 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// Get user by ID
+router.get('/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const userData = await User.findByPk(userId, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post, as: 'posts' }] // Assuming your association is named 'posts'
+    });
+
+    if (!userData) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
 
 // Login
 router.post('/login', async (req, res) => {
