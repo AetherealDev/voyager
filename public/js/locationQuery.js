@@ -24,7 +24,7 @@ const locationQueryHandler = async (event) => {
 };
 
 const renderQuery = async (placeId) => {
-  const response = await fetch(`/feed/${placeId}`, {
+  const response = await fetch(`/feed/search/${placeId}`, {
     method: 'GET',
   });
 
