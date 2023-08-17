@@ -34,12 +34,13 @@ const upload = multer({
 
 router.post('/', withAuth, upload.single('image'), async (req, res) => {
   try {
+    imageUrl = req.file.path.substring(6);
     const postData = await Post.create({
       user_id: req.session.userID,
       place_id: req.body.place_id,
       title: req.body.title,
       content: req.body.content,
-      image: req.file.path
+      image: imageUrl
     });
 
     res.status(200).json(postData);

@@ -8,6 +8,7 @@
         {{#each user.posts}}
             <li class="list-group-item">
                 <h4>{{ this.title }}</h4>
+                <img src="{{this.image}}" class="cover-image">
                 <p>{{ this.content }}</p>
             </li>
         {{/each}}
