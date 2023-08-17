@@ -4,7 +4,9 @@
             <div class="d-flex justify-content-between">
                 <h4>{{ post.title }} by {{post.user.username}}</h4>
                 <div>
-                    <button class="btn btn-primary btn-sm" onclick="upvotePost('{{ post.id }}')">Upvote</button>
+                    <span id="upvote-post-{{post.id}}" class="badge bg-primary">Upvotes: {{ post.upvote }}</span>
+                    <br/>
+                    <button class="btn btn-secondary btn-sm" onclick="upvotePost('{{ post.id }}')">👍 Like</button>
                 </div>
             </div>
             <p>{{ post.content }}</p>
