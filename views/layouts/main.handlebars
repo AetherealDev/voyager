@@ -13,7 +13,7 @@
 <header class="container-fluid text-center p-1 rounded-3">
     <div class="row align-items-center" id="header">
         <div class="col">
-            <nav class="nav justify-content-start bg-custom-purple border-purple border rounded-3">
+            <nav class="nav justify-content-between bg-custom-purple border-purple border rounded-3">
                 <a class="nav-link text-light" href="/">Home</a>
                 {{#if loggedIn}}
                 <a class="nav-link text-light" href="/feed">Feed</a>
@@ -22,6 +22,15 @@
                 {{else}}
                 <a class="nav-link text-light" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Feed</a>
                 <a class="nav-link text-light" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Post</a>
+                {{/if}}
+                {{#if loggedIn}}
+                <button type="button" class="btn btn-primary" id="logout">
+                    logout
+                </button>
+                {{else}}
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
                 {{/if}}
             </nav>
         </div>
@@ -33,15 +42,6 @@
                 <div class="input-group">
                     <input name="location-query" type="text" class="form-control" id="location-query" placeholder="🔎 Search for a location">
                 </div>
-                {{#if loggedIn}}
-                <button type="button" class="btn btn-primary" id="logout">
-                    logout
-                </button>
-                {{else}}
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Login
-                </button>
-                {{/if}}
             </div>
             <div class="container">
                 {{> loginModal }}
