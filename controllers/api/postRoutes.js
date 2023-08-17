@@ -71,11 +71,11 @@ router.put('/:id/upvote', async (req, res) => {
 });
 
 
-//delete posts
+//delete posts route
 router.delete('/:id/delete', async (req, res) => {
   try {
 
-    const postId = req.params.id; // Assuming you pass the post ID in the URL
+    const postId = req.params.id;
     const post = await Post.findByPk(postId);
 
     if (!post) {
