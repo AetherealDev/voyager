@@ -1,3 +1,16 @@
-{{#each posts as |post| }}
-{{> post-details}}
-{{/each}}
+<ul class="list-group mt-3">
+    {{#each posts as |post| }}
+        <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <h4>{{ post.title }} by {{post.user.username}}</h4>
+                <div>
+                    <button class="btn btn-primary btn-sm" onclick="upvotePost('{{ post.id }}')">Upvote</button>
+                </div>
+            </div>
+            <p>{{ post.content }}</p>
+        </li>
+    {{/each}}
+</ul>
+
+
+<script src="/js/feed.js"></script>
