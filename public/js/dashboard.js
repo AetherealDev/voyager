@@ -1,6 +1,6 @@
 function deletePost(postId) {
     // Send an AJAX request to upvote the post
-    fetch(`/api/post/delete/${postId}/`, {
+    fetch(`/api/post/${postId}/delete`, {
         method: 'DELETE',
     })
         .then(response => response.json())

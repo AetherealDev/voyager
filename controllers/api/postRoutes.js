@@ -72,12 +72,11 @@ router.put('/:id/upvote', async (req, res) => {
 
 
 //delete posts
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/:id/delete', async (req, res) => {
   try {
+
     const postId = req.params.id; // Assuming you pass the post ID in the URL
     const post = await Post.findByPk(postId);
-
-    console.log(postId);
 
     if (!post) {
       return res.status(404).json({ error: 'Post not found' });
