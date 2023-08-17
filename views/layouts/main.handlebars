@@ -23,6 +23,15 @@
                 <a class="nav-link text-light" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Feed</a>
                 <a class="nav-link text-light" href="" data-bs-toggle="modal" data-bs-target="#loginModal">Post</a>
                 {{/if}}
+                {{#if loggedIn}}
+                <button type="button" class="btn btn-primary" id="logout">
+                    logout
+                </button>
+                {{else}}
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
+                {{/if}}
             </nav>
         </div>
         <div class="col-6">
@@ -33,15 +42,6 @@
                 <div class="input-group">
                     <input name="location-query" type="text" class="form-control me-2" id="location-query" placeholder="🔎 Search for a location">
                 </div>
-                {{#if loggedIn}}
-                <button type="button" class="btn btn-primary" id="logout">
-                    logout
-                </button>
-                {{else}}
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Login
-                </button>
-                {{/if}}
             </div>
             <div class="container">
                 {{> loginModal }}

@@ -1,11 +1,24 @@
-<body>
 <div class="container mt-5">
+    {{#if singleQuery}}
+    <h1>Welcome, {{ post.user.username }}!</h1>
+    <h2>Your Posts:</h2>
+    <ul class="list-group mt-3">
+        <li class="list-group-item">
+            <div class="d-flex justify-content-between">
+                <h4>{{ post.title }}</h4>
+            </div>
+            <img src="{{post.image}}" class="cover-image">
+            <p>{{ post.content }}</p>
+        </li>
+    </ul>
+    {{else}}
     <h1>Welcome, {{ user.username }}!</h1>
     <h2>Your Posts:</h2>
-
     <ul class="list-group mt-3">
         {{#each user.posts}}
+        <a href="/dashboard/{{this.id}}" id="post-link">
             <li class="list-group-item">
+                <img src="{{this.image}}" class="cover-image">
                 <div class="d-flex justify-content-between">
                     <h4>{{ this.title }}</h4>
                 </div>
@@ -13,9 +26,10 @@
                 <button class="btn btn-secondary btn-sm" onclick="deletePost(`{{ this.id }}`)">🗑️ Delete</button>
                 <p>{{ this.content }}</p>
             </li>
+        </a>
         {{/each}}
     </ul>
-
+    {{/if}}
     <div class="mt-5">
         <a href="/post" class="btn btn-primary btn-lg">Create Post</a>
         <a href="/feed" class="btn btn-secondary btn-lg">Feed</a>
@@ -23,5 +37,3 @@
 </div>
 
 <script src="/js/dashboard.js"></script>
-
-</body>

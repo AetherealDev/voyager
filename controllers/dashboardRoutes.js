@@ -25,7 +25,13 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
 
     if(!postData) {
       res.status(404).json({ message: 'Could not find post with that id!' });
@@ -35,6 +41,7 @@ router.get('/:id', withAuth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render('dashboard', { 
+      singleQuery: true,
       post,
       loggedIn: req.session.loggedIn,
      });

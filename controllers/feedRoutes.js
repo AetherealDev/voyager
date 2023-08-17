@@ -14,6 +14,9 @@ router.get('/recent', withAuth, async (req, res) => {
           model: User,
         },
       ],
+      order: [
+        ['id', 'DESC'],
+      ]
     });
 
     const posts = postData.map((post) =>
@@ -57,7 +60,8 @@ router.get('/popular', withAuth, async (req, res) => {
   }
 });
 
-router.get('/:place_id', withAuth, async (req, res) => {
+router.get('/search/:place_id', withAuth, async (req, res) => {
+  console.log(req.params.place_id);
   try {
     const postData = await Post.findAll({
       where: {
@@ -77,7 +81,7 @@ router.get('/:place_id', withAuth, async (req, res) => {
       post.get({ plain: true })
     );
 
-    res.render('feed', { 
+    res.render('feed', {
       posts,
       loggedIn: req.session.loggedIn   
      });
@@ -87,5 +91,34 @@ router.get('/:place_id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    if(!postData) {
+      res.status(404).json({ message: 'Could not find post with that id!' });
+      return;
+    }
+
+    const post = postData.get({ plain: true });
+
+    console.log(post);
+
+    res.render('feed', {
+      singleQuery: true,
+      post,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
