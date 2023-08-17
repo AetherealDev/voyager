@@ -10,6 +10,7 @@
                     <h4>{{ this.title }}</h4>
                 </div>
                 <img src="{{this.image}}" class="cover-image">
+                <button class="btn btn-secondary btn-sm" onclick="deletePost(`{{ this.id }}`)">🗑️ Delete</button>
                 <p>{{ this.content }}</p>
             </li>
         {{/each}}

@@ -1,7 +1,18 @@
-function viewPost(postId) {
+function deletePost(postId) {
+    // Send an AJAX request to upvote the post
+    fetch(`/api/post/delete/${postId}/`, {
+        method: 'DELETE',
+    })
+        .then(response => response.json())
+        .then(data => {
 
-}
+            location.reload();
 
-function upvotePost(postId) {
-
+            // Optionally, provide feedback to the user (e.g., success message)
+            console.log(data.message);
+        })
+        .catch(error => {
+            // Handle errors, show error message to the user
+            console.error('Error deleting post:', error);
+        });
 }

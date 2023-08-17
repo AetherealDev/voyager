@@ -70,4 +70,32 @@ router.put('/:id/upvote', async (req, res) => {
   }
 });
 
+
+//delete posts
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    const postId = req.params.id; // Assuming you pass the post ID in the URL
+    const post = await Post.findByPk(postId);
+
+    console.log(postId);
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+
+    await post.destroy({
+      where: {
+        id: postId
+      }
+    });
+
+    return res.status(200).json({ message: 'Post deleted', post });
+  } catch (error) {
+    console.error('Error deleting post:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+
 module.exports = router;
