@@ -75,6 +75,10 @@
   height: 500px;
 }
 
+#post-link {
+  text-decoration: none;
+  color: black;
+}
 
 .hidden {
   display: none;
