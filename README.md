@@ -22,6 +22,8 @@ Voyager is a social-media-type blog site for travelers to document their experie
 ## Usage
 Visit the deployed application [here](https://voyager-blog-33633427cd04.herokuapp.com/).
 
+![deployed-image](https://github.com/AetherealDev/voyager/assets/54604339/1bde72c0-d42f-4315-87a9-9bf9ee3fed67)
+
 ## License
 This repository is covered under MIT License. For more information, check the `LICENSE` file.
 
