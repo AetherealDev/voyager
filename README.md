@@ -20,7 +20,7 @@ Voyager is a social-media-type blog site for travelers to document their experie
 6. Run the command `npm start` to start the application's server.
 
 ## Usage
-Visit the deployed application [here](https://voyager-blog-c146da73412a.herokuapp.com/).
+Visit the deployed application [here](https://voyager-blog-33633427cd04.herokuapp.com/).
 
 ## License
 This repository is covered under MIT License. For more information, check the `LICENSE` file.
