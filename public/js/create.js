@@ -61,7 +61,7 @@ document.querySelector('#post-form').addEventListener('submit', async function(e
   });
 
   if(response.ok) {
-    console.log(response);
+    document.location = "/dashboard";
   } else {
     alert('Failed to create post.');
   }
