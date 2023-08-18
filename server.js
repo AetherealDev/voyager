@@ -30,7 +30,7 @@ const sess = {
 
 app.use(session(sess));
 
-//set handlebars as view engine
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
